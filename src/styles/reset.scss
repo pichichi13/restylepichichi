@@ -1,0 +1,29 @@
+/* reset.scss */
+
+/* Resetta margini e padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Imposta il font e lo stile di base */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Azzera i bordi per alcune elemente */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* Azzera stili su link */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ulteriore personalizzazione a seconda delle necessità */

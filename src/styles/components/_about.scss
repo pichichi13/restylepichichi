@@ -1,0 +1,325 @@
+@use '../variables' as *;
+@use '../mediaquery' as *;
+
+.about{    
+    width:100vw;
+    height: 100vh;
+    @include respond-to(desktop) {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        width:auto;
+    }
+    .profile{
+        height:100vh;
+        overflow: hidden;
+        @include respond-to(desktop) {
+            width:50%;
+            left: 50%;
+            align-content:flex-end; 
+        }
+        .imgprofile{
+            position:absolute;
+            bottom:0;
+            left:0;
+            animation: animationPhoto 1s ease-in-out 3s forwards;
+            opacity: 0;
+            width:100%;
+            @include respond-to(desktop) {
+                width:41rem;
+                left:2.6rem;
+            }
+        }
+        
+        .loghi{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin:0 auto;
+            top:1.7rem;
+            /* Animazione di rotazione infinita del cerchio, parte dopo 12 s */
+            animation: rotateCircle 30s linear infinite; 
+            animation-delay: 5s;
+            //border:solid 1px green;
+            @include respond-to(desktop) {
+                position: relative;
+                top:0rem;
+                width: 100%;
+                height: 100%;
+                border-radius:0%;
+                animation: none;    
+            }
+            .logo{
+                position:absolute;
+                width:3rem;
+                height:3rem;
+                opacity: 0;
+                top: 50%; /* Posiziona al centro del contenitore */
+                left: 50%; /* Posiziona al centro del contenitore */
+                
+                //Animazione di ogni logo dal centro alla propria posizione
+                transition: transform 1s ease-in-out;  /* Animazione al cambiamento */
+                animation-duration: 1s; /* Durata dell'animazione */
+                animation-timing-function: ease-out; /* Funzione di temporizzazione */
+                animation-fill-mode: forwards;  /* Mantiene la posizione finale dell'animazione */
+                animation-delay: 3s;
+    
+    
+                @include respond-to(desktop) {
+                    width:6rem;
+                    height:6rem;
+                    opacity: 0;
+                }
+            }
+            // Ciclo SCSS per generare posizioni e animazioni dinamiche per ogni logo
+            $rotate: 308.57deg, 0deg, 51.43deg, 99.86deg, 142.29deg, 185.71deg, 233.71deg; 
+            $translate: 153px, 120px, 120px, 132px, 253px, 176px, 204px;
+            
+            @for $i from 1 through 7 {
+                // Calcola i valori di rotazione e traslazione direttamente nel ciclo
+                $rotate-value: list($rotate, $i); // Ottieni il valore della rotazione
+                $translate-value: list($translate, $i); // Ottieni il valore della traslazione
+                .logo-#{$i} {
+                    // Definisce l'animazione per ogni logo dal centro alla propria posizione
+                    animation-name: moveToPosition-#{$i};
+                    // Definisce l'animazione keyframes dinamicamente perchè ogni logo ha la sua posizione di destinazione
+                    @keyframes moveToPosition-#{$i} {
+                        0% {
+                            opacity: 0;
+                            transform: translate(0, 0); /* Parte dal centro (0, 0) */
+                        }
+                        100% {
+                            opacity: 1;
+                            transform: translate($translate-value, $rotate-value); /* Arriva alla posizione calcolata */
+                        }
+                    }
+                }
+            }
+            //Definisco la posizione finale di ogni logo
+            .logo_html5,.logo-1 {
+                transform: rotate(308.57deg) translate(153px) rotate(-308.57deg);
+            }
+            .logo_css3,.logo-2 {
+                transform: rotate(0deg) translate(120px) rotate(0deg);
+            }
+            .logo_react,.logo-4 {
+                transform: rotate(51.43deg) translate(120px) rotate(-51.43deg);
+            }
+            .logo_js,.logo-3 {
+                transform: rotate(99.86deg) translate(132px) rotate(-99.86deg);
+            }
+            .logo_node,.logo-5 {
+                transform: rotate(142.29deg) translate(153px) rotate(-142.29deg);
+            }
+            .logo_tailwind,.logo-6 {
+                transform: rotate(185.71deg) translate(176px) rotate(-187.71deg);
+            }
+            .logo_altro,.logo-7 {
+                font-size: 3rem;
+                color:$white;
+                transform: rotate(233.71deg) translate(204px) rotate(-233.71deg);
+            }
+            @include respond-to(desktop) {
+                .logo_html5{
+                    animation: animationLogo 1s ease-in-out 4s forwards;
+                    top: 6rem;
+                    left: 20rem;
+                
+                }
+                .logo_css3{
+                    animation: animationLogo 0.5s ease-in-out 4.3s forwards;
+                    top: 12rem;
+                    left: 32rem;
+                
+                }
+                .logo_react{
+                    animation: animationLogo 0.5s ease-in-out 4.6s forwards;
+                    top: 20rem;
+                    left: 2rem;
+                
+                }
+                .logo_js{
+                    animation: animationLogo 0.5s ease-in-out 4.9s forwards;
+                    top: 12rem;
+                    left: 8rem;
+                
+                }
+                .logo_node{
+                    animation: animationLogo 0.5s ease-in-out 5.2s forwards;
+                    top: 20rem;
+                    left: 38rem;
+                
+                }
+                .logo_tailwind{
+                    animation: animationLogo 0.5s ease-in-out 5.5s forwards;
+                    top: 30rem;
+                    left: 0rem;
+                
+                }
+                .logo_altro{
+                    animation: animationLogo 0.5s ease-in-out 5.8s forwards;
+                    color:$white;
+                    font-size:5rem;
+                    line-height: 2.95rem;            
+                    top: 30rem;
+                    left: 40rem;
+                }
+            }    
+        }
+    }
+    .info{
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        @include respond-to(desktop) {
+            position: inherit;
+            align-content: center;
+            width:50%;
+        }
+
+
+        .name{
+            //font-family: 'Rubik', sans-serif;
+            font-family: 'Frijole', sans-serif;
+            opacity: 0;
+            animation: animationName 1s ease-in-out 1s forwards;
+            width: 50%;
+            margin: 0 auto;
+            margin-top:2rem;
+            @include respond-to(desktop) {
+                width: 100%;
+                margin-top:0;
+            }
+        }
+        .job{
+            //font-family: 'Rubik', sans-serif;
+            font-family: 'Frijole', sans-serif;
+            opacity: 0;
+            animation: animationJob 1s ease-in-out 2s forwards;
+            margin-top: 8rem;
+            @include respond-to(desktop) {
+                margin-top:0;
+            }
+        }
+        .textanimated{
+            font-size:3rem;
+            color:$white
+        }
+    }
+    .scroll_down{
+        position:absolute;
+        bottom:2rem;
+        right:1rem;
+        opacity:0;
+        animation: animationScrollDown 1s ease-in-out 7s infinite;
+    }
+}
+
+/* Animazione per il nome */
+@keyframes animationName {
+    0% {
+        opacity: 0;
+        transform: scale(0);  /* Inizia con scala 0 */
+        transform: translateY(-200px);
+    }
+    50% {
+        transform: scale(1.5);  /* Arriva a scala 150% a metà animazione */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);  /* Torna a scala 100% alla fine */
+        transform: translateY(0);
+    }
+}
+
+/* Animazione per il job */
+@keyframes animationJob {
+    0% {
+        opacity: 0;
+        transform: translateX(120%);
+    }
+    50% {
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animazione per la foto profilo */
+@keyframes animationPhoto {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animazione per i vari loghi */
+@keyframes animationLogo {
+    0% {
+        opacity: 0;
+        transform: scale(0);  /* Inizia con scala 0 */
+    }
+    50% {
+        transform: scale(1.5);  /* Arriva a scala 150% a metà animazione */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);  /* Torna a scala 100% alla fine */
+    }
+}
+
+/* Animazione per contactus */
+@keyframes animationContactus {
+    0% {
+        opacity: 0;
+        //transform: scale(0);  /* Inizia con scala 0 */
+    }
+    50% {
+        //transform: scale(1.5);  /* Arriva a scala 150% a metà animazione */
+    }
+    100% {
+        opacity: 1;
+        //transform: scale(1);  /* Torna a scala 100% alla fine */
+    }
+}
+
+@keyframes animationScrollDown {
+    0% {
+        opacity:1;
+        transform: translateY(0);    
+    }
+    25% {
+        opacity:1;
+        transform: translateY(1rem);
+    }
+    50% {
+        opacity:1;
+        transform: translateY(0);
+    }
+    75% {
+        opacity:1;
+        transform: translateY(-1rem);
+    }
+    100% {
+        opacity:1;
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes rotateCircle {
+    0% {
+        transform: rotate(0deg);  /* Inizia senza rotazione */
+    }
+    100% {
+        transform: rotate(360deg);  /* Ruota di 360 gradi (una rotazione completa) */
+    }
+}

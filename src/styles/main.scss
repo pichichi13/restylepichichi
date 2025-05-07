@@ -1,0 +1,137 @@
+@use './reset'  as *;
+@use 'variables' as *;
+@use 'mediaquery' as *;
+
+body {
+  font-family: Arial, sans-serif;
+  //background-color: #f4f4f4;
+}
+
+.top_info{
+  position: absolute;
+  //bottom:0rem;
+  top:90vh;
+  z-index:2;
+  height:5rem;
+  width:100vw;
+  background-color: none;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  font-family: 'Frijole', sans-serif;
+  opacity: 0;
+  animation: animationContactus 1s ease-in-out 6s forwards;
+  @include respond-to(desktop) {
+    position: fixed;
+    bottom:8rem;
+    width:100%;
+    top:0.5rem;
+    right:0.5rem;
+    align-items:right;
+    justify-content:right;
+  }
+  img{
+    width:70px;
+    height:70px;
+    &:hover{
+      width:75px;
+      height:75px;
+    }
+  }
+  .cv{
+    @include respond-to(desktop) {
+      border: solid 3px white;
+      margin-top: 3px;
+      width:60px;
+      height:60px;
+    }
+    width:65px;
+    height:65px;
+    border: solid 2px white;
+    border-radius: 70px;
+    margin-top: 3px;
+    &:hover{
+      width:65px;
+      height:65px;
+    }
+  }
+  .linkedin{
+    @include respond-to(desktop) {
+      border: solid 3px white;
+      margin-top: 0px;
+      width:60px;
+      height:60px;
+    }
+    width:65px;
+    height:65px;
+    border: solid 2px white;
+    border-radius: 70px;
+    margin-top: 3px;
+    &:hover{
+      width:65px;
+      height:65px;
+    }
+  }
+}
+
+section{
+  width:100%;
+  height:100vh;  
+  position: relative;
+  border-top:solid 1px $black;
+}
+
+.title{
+  font-size: 1.8rem;
+  color:$white;
+  @include respond-to(desktop) {
+    font-size: 4rem;
+  }
+}
+
+.subtitle{
+  font-size:3rem;
+  color:$white;
+}
+
+.text{
+  font-size: 1.5rem;
+  color:$white;
+}
+
+h2{
+  /*position: absolute;
+  top:0;
+  left:0;
+  width:2rem;
+  background-color: black;
+  color:white;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-align: end;
+  padding:1rem  2.5rem 1rem 0;
+  font-family: 'Rubik', sans-serif;
+  border-radius: 5rem 0rem 0rem 5rem;*/
+  font-family: 'RubikMoonrocks', sans-serif;
+  @include respond-to(desktop) {
+    width: 90%;
+  }
+  width:75%;
+  opacity: 1;
+  background: #B776D5;
+  margin: 0 auto;
+  border: solid 1px $black;
+  border-top:none;
+  border-radius: 0px 40px;
+  color:$white;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 
+    1px 1px 0 black,  /* Ombra a destra in basso */
+    -1px 1px 0 black, /* Ombra a sinistra in basso */
+    1px -1px 0 black, /* Ombra a destra in alto */
+    -1px -1px 0 black; /* Ombra a sinistra in alto */
+    @include respond-to(desktop) {
+      width:50%;
+    }
+}

@@ -1,0 +1,57 @@
+.portfolio{
+    height: auto;
+    overflow: hidden;
+    .portfolio-container {
+        display: flex;
+        overflow-x: auto;  // Permette lo scorrimento orizzontale
+        scroll-behavior: smooth;
+        gap: 20px;
+        padding: 20px;
+        padding-left: 40px;
+        justify-content: flex-start;
+      
+        /* Nascondi la scrollbar orizzontale */
+        -ms-overflow-style: none; /* Per Internet Explorer e Edge */
+        scrollbar-width: none; /* Per Firefox */
+        
+        /* Per nascondere la scrollbar in Chrome, Safari e Opera */
+        &::-webkit-scrollbar {
+          display: none;
+        }
+    
+        .portfolio-item {
+            position: relative;
+            flex-shrink: 0;
+            width: 50rem; // Regola la larghezza dell'item
+            transition: transform 0.3s ease, z-index 0.3s ease; // Transizioni per l'effetto di zoom
+            transform-origin: center center; // Assicurati che lo zoom sia centrato
+            
+            &:not(.active) {
+                transform: scale(0.8); // Riduci la dimensione degli elementi non centrali
+                z-index: 1; // Gli elementi non centrali saranno in secondo piano
+            }
+            
+            &.active {
+                transform: scale(1); // Zoom sull'elemento centrale
+                z-index: 10; // L'elemento centrale sarà in primo piano
+            }
+    
+            img {
+                width: 100%;
+                border-radius: 10px; // Rendi le immagini più estetiche
+                object-fit: cover; // Assicurati che le immagini riempiano correttamente il box      
+            }
+            h3 {
+                text-align: center;
+                margin-top: 10px;
+            }
+            a {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+                text-decoration: none;
+                color: #007acc;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+@use '../variables' as *;
+@use '../mediaquery' as *;
+
+.hobbies{
+    height:auto;
+    @include respond-to(desktop) {
+        height:80vh;
+    }
+    .images-gallery{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include respond-to(desktop) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 2rem;
+            //margin-top: 5rem;
+            padding-top:15%;
+            align-items: initial;
+        }
+        .image-container{
+            justify-items:center;
+            @include respond-to(desktop) {
+                position: relative;
+                display: flex;    
+                width: 25%;
+                align-items: center;
+                justify-content: space-around;
+            }
+            img{
+                display: block;
+                width:200px;
+                @include respond-to(desktop) {
+                    width: auto;
+                    height: auto;
+                }    
+            }
+            .description{
+                font-family: 'Rubik', sans-serif;
+                color:black;
+                text-align: center;
+                font-size: 2rem;
+                @include respond-to(desktop) {
+                    position: absolute;
+                    top:110%;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,130 @@
+@use '../mediaquery' as *;
+
+.skills{
+    height:auto;
+    //padding-top:3rem;
+    background-color: #110F0F;
+    .mac{
+        position: relative;
+        width: 90%;
+        height: auto;
+        //bottom: -7.5rem;
+        z-index: 1;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    img.skills-image{
+        position: absolute;
+        width:15%;
+        z-index:2;
+        @include respond-to(desktop) {
+            width:10%;
+        }    
+    }
+    img.css3 {
+        top:20%;
+        left:15%;
+    }
+    img.js {
+        top:23%;
+        left:30%;
+    }
+    img.html5 {
+        top:20%;
+        left:43%;
+    }
+    img.react {
+        top:22%;
+        left:56%;
+    }
+    img.tailwind {
+        top:23%;
+        left:70%;
+    }
+    img.npm {
+        top:42%;
+        left:20%;
+    }
+    img.node {
+        top:43%;
+        left:37%;
+    }
+    img.responsive {
+        top:46%;
+        left:53%;
+    }
+    img.git {
+        top:35%;
+        left:70%;
+    }
+    img.react_native {
+        top:45%;
+        left:55%;
+    }
+    img.photoshop {
+        top:52%;
+        left:18%;
+    }
+    img.ionic {
+        top:53%;
+        left:65%;
+    }
+    img.sass {
+        top:57%;
+        left:47%;
+    }
+    @include respond-to(desktop) {
+        img.css3 {
+            top:13%;
+            left:15%;
+        }
+        img.js {
+            top:11%;
+            left:29%;
+        }
+        img.html5 {
+            top:14%;
+            left:43%;
+        }
+        img.react {
+            top:11%;
+            left:56%;
+        }
+        img.tailwind {
+            top:15%;
+            left:70%;
+        }
+        img.npm {
+            top:38%;
+            left:20%;
+        }
+        img.node {
+            top:33%;
+            left:37%;
+        }
+        img.responsive {
+            top:36%;
+            left:52%;
+        }
+        img.git {
+            top:32%;
+            left:69%;
+        }
+        img.react_native {
+            top:55%;
+            left:55%;
+        }
+        img.photoshop {
+            top:51%;
+            left:23%;
+        }
+        img.ionic {
+            top:51%;
+            left:45%;
+        }
+        img.sass {
+            top:51%;
+            left:66%;
+        }    
+    }
+}

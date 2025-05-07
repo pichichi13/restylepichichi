@@ -1,0 +1,56 @@
+@use '../variables' as *;
+@use '../mediaquery' as *;
+
+.portfolio{
+    .portfolio-container-aos{
+        @include respond-to(desktop) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }    
+        .portfolio-item{
+            width:100%;
+            @include respond-to(desktop) {
+                width: 500px;
+                height: 350px;
+                margin-bottom: 30px;
+                position: relative;
+            }
+            img{
+                width:100%;
+                @include respond-to(desktop) {
+                    width: 500px;
+                    height: 350px;
+                }
+            }
+            .portfolio-content{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 0;
+                opacity: 0;
+                background-color: rgba(0, 0, 0, 0.7);
+                //background-color: white;
+                border-radius: 5px 5px 0 0;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h3{
+                    opacity: 1;
+                    text-align: center;
+                    margin: 0;
+                }
+            }
+        }
+        :hover{
+            .portfolio-content{
+                opacity: 1;
+                width:100%;
+                height:25%;
+                transition: height 0.5s ease-in-out; /* Animazione per l'espansione */
+            }
+        }
+    }
+}    

@@ -1,0 +1,33 @@
+@use '../variables' as *;
+@use '../mediaquery' as *;
+
+.portfolio{
+    position: relative;
+    margin-top:5rem;
+    @include respond-to(desktop) {
+        margin-top:0;
+        width:auto;
+    }
+    .button-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem;
+        button{
+            border-radius: 1rem;
+            padding: 0.5rem;
+            margin:0 1rem 0 0;
+            font-family: 'Rubik', sans-serif;
+            font-size:1.5rem;
+            &:hover, &.active{
+                background-color: #DDA0DD;
+            }
+        }
+    }
+    @include respond-to(desktop) {
+        h2{
+            position: relative;
+            z-index: 1;    
+        }
+    }
+}    
