@@ -4,7 +4,7 @@ import imageBkg from '../assets/portfolio/portfolio.png';
 import PortfolioOrizzontale from '@components/portfolioOrizzontale';
 import PortfolioVerticale from '@components/portfolioVerticale';
 import TitlePageH2 from '@components/titlePageH2';
-import useDeviceType from '../utils/useDeviceType';  // Importiamo il custom hook
+import useDeviceType from '@utils/useDeviceType';  // Importiamo il custom hook
 
 
 interface props {

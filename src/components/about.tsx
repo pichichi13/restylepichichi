@@ -1,7 +1,7 @@
 import '@css/components/_about.scss';
 import imageBkg from '@assets/about.jpg';
 //import imageProfile from '@assets/profilo.png';
-import imageProfile from '@assets/profilo_def1.png';
+import imageProfile from '@assets/donatellapiccininno.png';
 import { RiScrollToBottomFill } from "react-icons/ri";
 import logo_html5 from '@assets/logo_html5.png';
 import logo_css3 from '@assets/logo_css3.png';

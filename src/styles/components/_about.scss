@@ -199,7 +199,7 @@
             font-family: 'Frijole', sans-serif;
             opacity: 0;
             animation: animationJob 1s ease-in-out 2s forwards;
-            margin-top: 8rem;
+            margin-top: 10rem;
             @include respond-to(desktop) {
                 margin-top:0;
             }

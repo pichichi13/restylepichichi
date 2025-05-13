@@ -7,6 +7,12 @@ body {
   //background-color: #f4f4f4;
 }
 
+h1{
+  visibility: hidden;
+  width:0;
+  height:0;
+}
+
 .top_info{
   position: absolute;
   //bottom:0rem;
@@ -92,6 +98,10 @@ section{
 .subtitle{
   font-size:3rem;
   color:$white;
+  line-height: 3rem;
+  @include respond-to(desktop) {
+    line-height: inherit;  
+  }
 }
 
 .text{

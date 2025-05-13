@@ -7,6 +7,12 @@ body {
   background-color: #f4f4f4;
 }
 
+h1{
+  visibility: hidden;
+  width:0;
+  height:0;
+}
+
 .pichichihouse{
   .bannertop{
     position: sticky;
@@ -36,7 +42,7 @@ body {
       flex-wrap: nowrap;
       flex-direction: row;
       z-index: 99999999;
-      h1{
+      .title{
         font-family: 'Frijole', sans-serif;
         font-size:1.6rem;
         @include respond-to(desktop) {

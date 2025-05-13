@@ -1,7 +1,7 @@
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 //import './App.css'
-import useDeviceType from '../src/utils/useDeviceType';  // Importiamo il custom hook
+import useDeviceType from '@utils/useDeviceType';  // Importiamo il custom hook
 
 import '@css/main.scss'  // Importa il file SCSS
 import About from '@components/about'
@@ -13,6 +13,7 @@ import '@css/_fonts.scss';
 import Portfolio from '@components/portfolio';
 import StickyTop from '@components/stickyTop';
 import { HelmetProvider } from "react-helmet-async";
+import HelmetComponent from "@components/helmetComponent";
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -23,6 +24,15 @@ function App() {
   return (
     <>
       <HelmetProvider>
+        
+        <HelmetComponent title="Donatella Piccininno - Frontend Developer" description="Sono Donatella, una Frontend Developer da più di 20 anni. Programmo principalmente in HTML5 e CSS3, 
+        ma conosco vari linguaggi di programmazione come React. Cerco di dare ai miei siti web una grafica accattivante ma senza trascurare la user
+        interface e la parte di responsive design. Sono abituata a lavorare sia in team che in autonomia. Non ho paura di confrontarmi o chiedere aiuto
+        ai miei colleghi e sono altrettanto contenta di poter aiutare gli altri in caso di neccesità." keywords="Frontend Developer, Frontend, Developer, Programmatrice, Siti, Siti web, HTML5, CSS3, React, React Native, Tailwind,
+        Node, NPM, Git, Codice, Responsive Design, Responsive, Smartphone, Tablet, User Interface, UX" ogtitle="Donatella Piccininno - Frontend Developer" ogdescription="Sono Donatella, una Frontend Developer da più di 20 anni. Programmo principalmente in HTML5 e CSS3, 
+        ma conosco vari linguaggi di programmazione come React. Cerco di dare ai miei siti web una grafica accattivante ma senza trascurare la user
+        interface e la parte di responsive design. Sono abituata a lavorare sia in team che in autonomia. Non ho paura di confrontarmi o chiedere aiuto
+        ai miei colleghi e sono altrettanto contenta di poter aiutare gli altri in caso di neccesità." ogimage="/path-to-image.jpg" />
 
         <StickyTop></StickyTop>
       
@@ -37,6 +47,7 @@ function App() {
         )}
         <Portfolio title="portfolio"></Portfolio>
         <Hobbies title="hobbies"></Hobbies>
+      
     
       </HelmetProvider>
     </>
