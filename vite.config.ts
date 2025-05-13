@@ -22,7 +22,7 @@ export default defineConfig({
       '@css': resolve(__dirname, './src/styles')
     }
   },
-  base: '/RESTYLE2025/',
+  base: '/',
   build: {
     rollupOptions: {
       input: {

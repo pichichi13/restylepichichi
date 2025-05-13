@@ -3,9 +3,8 @@
 
 .portfolio{
     position: relative;
-    margin-top:5rem;
+    margin-top:0rem;
     @include respond-to(desktop) {
-        margin-top:0;
         width:auto;
     }
     .button-container{

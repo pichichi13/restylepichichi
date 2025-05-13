@@ -63,7 +63,7 @@ const WorkMobile: React.FC<Props> = ({ title }) => {
       const svgHeight = sectionRef.current.offsetHeight;
 
       const lineStartY = svgHeight * 0.1;
-      const lineEndY = svgHeight * 0.9;
+      const lineEndY = svgHeight * 0.85;
       const lineLength = lineEndY - lineStartY;
       const step = lineLength / (positions.length - 1);
 
@@ -142,8 +142,8 @@ const WorkMobile: React.FC<Props> = ({ title }) => {
         style={{
           height: '100vh',
           backgroundImage: `url(${imageBkg})`, // Usa l'immagine importata
-          backgroundSize: 'cover'
-      }}
+          backgroundSize: 'cover',
+        }}
       >
         <TitlePageH2 title={title}></TitlePageH2>
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100vh" className="motion-path">

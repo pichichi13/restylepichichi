@@ -11,6 +11,7 @@ import WorkMobile from '@components/workMobile'
 import Hobbies from '@components/hobbies'
 import '@css/_fonts.scss';
 import Portfolio from '@components/portfolio';
+import imageProfile from '@assets/donatellapiccininnosocial.png';
 import StickyTop from '@components/stickyTop';
 import { HelmetProvider } from "react-helmet-async";
 import HelmetComponent from "@components/helmetComponent";
@@ -25,14 +26,20 @@ function App() {
     <>
       <HelmetProvider>
         
-        <HelmetComponent title="Donatella Piccininno - Frontend Developer" description="Sono Donatella, una Frontend Developer da più di 20 anni. Programmo principalmente in HTML5 e CSS3, 
+        <HelmetComponent 
+          title="Donatella Piccininno - Frontend Developer" 
+          description="Sono Donatella, una Frontend Developer da più di 20 anni. Programmo principalmente in HTML5 e CSS3, 
         ma conosco vari linguaggi di programmazione come React. Cerco di dare ai miei siti web una grafica accattivante ma senza trascurare la user
         interface e la parte di responsive design. Sono abituata a lavorare sia in team che in autonomia. Non ho paura di confrontarmi o chiedere aiuto
-        ai miei colleghi e sono altrettanto contenta di poter aiutare gli altri in caso di neccesità." keywords="Frontend Developer, Frontend, Developer, Programmatrice, Siti, Siti web, HTML5, CSS3, React, React Native, Tailwind,
-        Node, NPM, Git, Codice, Responsive Design, Responsive, Smartphone, Tablet, User Interface, UX" ogtitle="Donatella Piccininno - Frontend Developer" ogdescription="Sono Donatella, una Frontend Developer da più di 20 anni. Programmo principalmente in HTML5 e CSS3, 
+        ai miei colleghi e sono altrettanto contenta di poter aiutare gli altri in caso di neccesità." 
+          keywords="Frontend Developer, Frontend, Developer, Programmatrice, Siti, Siti web, HTML5, CSS3, React, React Native, Tailwind,
+        Node, NPM, Git, Codice, Responsive Design, Responsive, Smartphone, Tablet, User Interface, UX" 
+          ogtitle="Donatella Piccininno - Frontend Developer" 
+          ogdescription="Sono Donatella, una Frontend Developer da più di 20 anni. Programmo principalmente in HTML5 e CSS3, 
         ma conosco vari linguaggi di programmazione come React. Cerco di dare ai miei siti web una grafica accattivante ma senza trascurare la user
         interface e la parte di responsive design. Sono abituata a lavorare sia in team che in autonomia. Non ho paura di confrontarmi o chiedere aiuto
-        ai miei colleghi e sono altrettanto contenta di poter aiutare gli altri in caso di neccesità." ogimage="/path-to-image.jpg" />
+        ai miei colleghi e sono altrettanto contenta di poter aiutare gli altri in caso di neccesità." 
+          ogimage={imageProfile} />
 
         <StickyTop></StickyTop>
       

@@ -6,6 +6,7 @@ import Milan from '@components/pichichihouse/milan'
 import banner from '@assets/pichichihouse/bannersmall.png';
 import mail from '@assets/pichichihouse/mail.png';
 import mappa from '@assets/pichichihouse/mappa.png';
+import imageProfile from '@assets/donatellapiccininnosocial.png';
 import { HelmetProvider } from "react-helmet-async";
 import HelmetComponent from "@components/helmetComponent";
 
@@ -23,7 +24,7 @@ const PichichiHouse = () => {
           keywords="pichichi house, bilocale in affitto Milano, affitto breve Milano, affitto medio a Milano, appartamento Milano, via Mecenate, affitti brevi, affitti medi, soggiorno Milano, Airbnb Milano, Booking Milano, vacanze Milano, soggiorno in centro Milano, bilocale arredato, balcone, comodo, tutti i comfort, grazioso, luminoso, accogliente" 
           ogtitle="Pichichi House, bilocale in Affitto a Milano, Via Mecenate" 
           ogdescription="Pichichi House: scopri il nostro bilocale in affitto a Milano, a soli 20 minuti dal centro. Situato in via Mecenate, ben servito dai mezzi pubblici. Perfetto per affitti brevi ma anche per soggiorni più lunghi. Comodo, moderno e con balcone!" 
-          ogimage="/path-to-image.jpg" />
+          ogimage={imageProfile} />
 
 
         <div className="pichichihouse">
