@@ -4,6 +4,7 @@ import ImageHouse from '@components/pichichihouse/imagehouse'
 import Service from '@components/pichichihouse/service'
 import Milan from '@components/pichichihouse/milan'
 import banner from '@assets/pichichihouse/bannersmall.png';
+import logopichichihouse from '@assets/pichichihouse/logo.png';
 import mail from '@assets/pichichihouse/mail.png';
 import mappa from '@assets/pichichihouse/mappa.png';
 import imageProfile from '@assets/donatellapiccininnosocial.png';
@@ -31,7 +32,8 @@ const PichichiHouse = () => {
           <div className='bannertop'>
             <img className="banner" alt="Banner" src={banner} />
             <div className="description">
-              <div className='title'>PICHICHI HOUSE</div>
+              {/* <div className='title'>PICHICHI HOUSE</div> */}
+              <img className="logopichichihouse" alt="Logo Pichichi House" src={logopichichihouse} />
               <div className="contact">
                 <a href="mailto:piccininno.donatella@gmail.com"><img className="mail" alt="Scrivimi" src={mail} /></a>
                 <a target="_blank" href="https://maps.app.goo.gl/fQNYEkHt2erctyrA7"><img className="mappa" alt="Dove siamo" src={mappa} /></a>
