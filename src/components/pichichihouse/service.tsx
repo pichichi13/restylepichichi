@@ -14,6 +14,9 @@ import lavastoviglie from '@assets/pichichihouse/servizi/lavastoviglie.png';
 import tv from '@assets/pichichihouse/servizi/tv.png';
 import wifi from '@assets/pichichihouse/servizi/wifi.png';
 import macchinacaffe from '@assets/pichichihouse/servizi/macchinacaffe.png';
+import phone from '@assets/pichichihouse/servizi/phone.png';
+import ferrodastiro from '@assets/pichichihouse/servizi/ferrodastiro.png';
+
 
 import autobus from '@assets/pichichihouse/servizi/autobus.png';
 import tram from '@assets/pichichihouse/servizi/tram.png';
@@ -40,6 +43,8 @@ const houseItems = [
   { img: tv, label: "Smart TV" },
   { img: wifi, label: "WiFi" },
   { img: macchinacaffe, label: "Macchina del caffè" },
+  { img: phone, label: "Phone" },
+  { img: ferrodastiro, label: "Ferro da stiro" },
 ];
 
 const transportItems = [

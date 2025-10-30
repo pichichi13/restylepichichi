@@ -161,13 +161,16 @@ h1{
       }
       .list{
         text-align: center;
+        flex-wrap: wrap;
         display: flex;
         flex-direction: column;
+        row-gap: 5rem;
         > div {
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
+          flex: 0 0 calc(20% - 1rem); /* 5 per riga (100 / 5 = 20%) */
           span{
             padding-top:1rem;
             padding-bottom:1rem;
