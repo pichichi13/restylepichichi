@@ -1,6 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { useT } from '@hooks/useT';
 
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -42,12 +43,14 @@ type MarkerData = {
 
 const Milan: React.FC = ({}) => {
   
+  const t = useT();
+
   const markers: MarkerData[] = [
     {
       id: 1,
       lat: 45.4642,
       lng: 9.19,
-      description: 'Duomo di Milano',
+      description: t('milan1'),
       percorso: 'https://maps.app.goo.gl/pQZ7VcZtLPFqQXsX7',
       immagine: duomo
     },
@@ -55,7 +58,7 @@ const Milan: React.FC = ({}) => {
       id: 2,
       lat: 45.4668,
       lng: 9.1905,
-      description: 'Galleria Vittorio Emanuele II',
+      description: t('milan2'),
       percorso: 'https://maps.app.goo.gl/nZvLjno71ewaQYvS8',
       immagine: galleriavittorioemanuele,
     },
@@ -63,7 +66,7 @@ const Milan: React.FC = ({}) => {
       id: 3,
       lat: 45.4706,
       lng: 9.1794,
-      description: 'Castello Sforzesco',
+      description: t('milan3'),
       percorso: 'https://maps.app.goo.gl/chUnx9M8E3zebCYY7',
       immagine: castellosforzesco
     },
@@ -71,7 +74,7 @@ const Milan: React.FC = ({}) => {
       id: 4,
       lat: 45.4656,
       lng: 9.1864,
-      description: 'Teatro alla Scala',
+      description: t('milan4'),
       percorso: 'https://maps.app.goo.gl/j8BjbTeWjGLnNzwN7',
       immagine: teatroscala
     },
@@ -79,7 +82,7 @@ const Milan: React.FC = ({}) => {
       id: 5,
       lat: 45.4663,
       lng: 9.1700,
-      description: 'Santa Maria delle Grazie - Ultima Cena',
+      description: t('milan5'),
       percorso: 'https://maps.app.goo.gl/rMdRKrcZ9GaAyWQd6',
       immagine: santamariagrazie
     },
@@ -87,7 +90,7 @@ const Milan: React.FC = ({}) => {
       id: 6,
       lat: 45.4720,
       lng: 9.1805,
-      description: 'Pinacoteca di Brera',
+      description: t('milan6'),
       percorso: 'https://maps.app.goo.gl/NGa347rkE7djv2aK7',
       immagine: pinacotecamilano
     },
@@ -95,7 +98,7 @@ const Milan: React.FC = ({}) => {
       id: 7,
       lat: 45.4648,
       lng: 9.1892,
-      description: 'Museo del Novecento',
+      description: t('milan7'),
       percorso: 'https://maps.app.goo.gl/PRHEYFgeUErsQFTdA',
       immagine: museo900
     },
@@ -103,7 +106,7 @@ const Milan: React.FC = ({}) => {
       id: 8,
       lat: 45.4722,
       lng: 9.1749,
-      description: 'Parco Sempione',
+      description: t('milan8'),
       percorso: 'https://maps.app.goo.gl/4oYQyjARhN6wGCGE6',
       immagine: parcosempione
     },
@@ -111,7 +114,7 @@ const Milan: React.FC = ({}) => {
       id: 9,
       lat: 45.4740,
       lng: 9.2020,
-      description: 'Giardini Pubblici Indro Montanelli',
+      description: t('milan9'),
       percorso: 'https://maps.app.goo.gl/jZRzfofFo4nnpDNs5',
       immagine: giardiniindromontanelli
     },
@@ -119,7 +122,7 @@ const Milan: React.FC = ({}) => {
       id: 10,
       lat: 45.4673,
       lng: 9.1964,
-      description: 'Via Montenapoleone',
+      description: t('milan10'),
       percorso: 'https://maps.app.goo.gl/P2XYrMbQ4aZGQ1sXA',
       immagine: montenapoleone
     },
@@ -127,7 +130,7 @@ const Milan: React.FC = ({}) => {
       id: 11,
       lat: 45.4821,
       lng: 9.2107,
-      description: 'Corso Buenos Aires',
+      description: t('milan11'),
       percorso: 'https://maps.app.goo.gl/zUZkoWD4ZdxT2cNUA',
       immagine: buesosaires
     },
@@ -135,7 +138,7 @@ const Milan: React.FC = ({}) => {
       id: 12,
       lat: 45.4507,
       lng: 9.1855,
-      description: 'Navigli',
+      description: t('milan12'),
       percorso: 'https://maps.app.goo.gl/3K7bZkZ5i4QLN66VA',
       immagine: navigli
     },
@@ -143,7 +146,7 @@ const Milan: React.FC = ({}) => {
       id: 13,
       lat: 45.4850,
       lng: 9.1927,
-      description: 'Isola - Bosco Verticale',
+      description: t('milan13'),
       percorso: 'https://maps.app.goo.gl/9dz6pvd4fZmVYQQ27',
       immagine: boscoverticale
     },
@@ -151,7 +154,7 @@ const Milan: React.FC = ({}) => {
       id: 15,
       lat: 45.4838,
       lng: 9.1560,
-      description: 'CityLife Milano',
+      description: t('milan14'),
       percorso: 'https://maps.app.goo.gl/9tVjHVHAgSPZQMNU8',
       immagine: citylife
     },
@@ -160,7 +163,7 @@ const Milan: React.FC = ({}) => {
   return (
     <>
       <section className='boxarea map'> 
-        <h2>Cosa visitare a Milano</h2>
+        <h2>{t('milan_title')}</h2>
         <MapContainer center={[45.4642, 9.19]} zoom={14} style={{ height: '100vh', width: '100%' }} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a>'

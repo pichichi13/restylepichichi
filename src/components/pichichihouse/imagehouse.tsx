@@ -4,6 +4,9 @@ import 'swiper/css'; // CSS base di Swiper
 //import 'swiper/css/effect-fade'; // CSS per l'effetto fade
 import 'swiper/css/navigation'; // CSS per la navigazione
 import 'swiper/css/pagination'; // CSS per la paginazione
+
+import { useT } from '@hooks/useT';
+
 import { EffectFade, Navigation, Pagination, Keyboard } from 'swiper/modules';
 
 import pichichihouse1Desktop from '@assets/pichichihouse/desktop/pichichi1.jpg';
@@ -64,38 +67,6 @@ import pichichihouse27Mobile from '@assets/pichichihouse/mobile/mappa_metropolit
 
 
 
-
-const images = [
-  { desktop: pichichihouse1Desktop, mobile: pichichihouse1Mobile },
-  { desktop: pichichihouse2Desktop, mobile: pichichihouse2Mobile },
-  { desktop: pichichihouse3Desktop, mobile: pichichihouse3Mobile },
-  { desktop: pichichihouse4Desktop, mobile: pichichihouse4Mobile },
-  { desktop: pichichihouse5Desktop, mobile: pichichihouse5Mobile },
-  { desktop: pichichihouse6Desktop, mobile: pichichihouse6Mobile },
-  { desktop: pichichihouse7Desktop, mobile: pichichihouse7Mobile },
-  { desktop: pichichihouse8Desktop, mobile: pichichihouse8Mobile },
-  { desktop: pichichihouse9Desktop, mobile: pichichihouse9Mobile },
-  { desktop: pichichihouse10Desktop, mobile: pichichihouse10Mobile },
-  { desktop: pichichihouse11Desktop, mobile: pichichihouse11Mobile },
-  { desktop: pichichihouse12Desktop, mobile: pichichihouse12Mobile },
-  { desktop: pichichihouse13Desktop, mobile: pichichihouse13Mobile },
-  { desktop: pichichihouse14Desktop, mobile: pichichihouse14Mobile },
-  { desktop: pichichihouse15Desktop, mobile: pichichihouse15Mobile },
-  { desktop: pichichihouse16Desktop, mobile: pichichihouse16Mobile },
-  { desktop: pichichihouse17Desktop, mobile: pichichihouse17Mobile },
-  { desktop: pichichihouse18Desktop, mobile: pichichihouse18Mobile },
-  { desktop: pichichihouse19Desktop, mobile: pichichihouse19Mobile },
-  { desktop: pichichihouse20Desktop, mobile: pichichihouse20Mobile },
-  { desktop: pichichihouse21Desktop, mobile: pichichihouse21Mobile },
-  { desktop: pichichihouse22Desktop, mobile: pichichihouse22Mobile },
-  { desktop: pichichihouse23Desktop, mobile: pichichihouse23Mobile },
-  { desktop: pichichihouse24Desktop, mobile: pichichihouse24Mobile },
-  { desktop: pichichihouse25Desktop, mobile: pichichihouse25Mobile },
-  { desktop: pichichihouse26Desktop, mobile: pichichihouse26Mobile },
-  { desktop: pichichihouse27Desktop, mobile: pichichihouse27Mobile },
-];
-
-
 const altTexts = [
   'Pichichi House - Welcome',
   'Pichichi House - Entrata',
@@ -127,13 +98,48 @@ const altTexts = [
 ];
 
 
-const CAROUSEL_IMAGES = images.map((img, index) => ({
-  srcDesktop: img.desktop,
-  srcMobile: img.mobile,
-  alt: altTexts[index],
-}));
-
 const ImageHouse = React.memo(() => {
+  
+  
+  const t = useT();
+
+  const images = [
+    { desktop: pichichihouse1Desktop, mobile: pichichihouse1Mobile, caption: '' },
+    { desktop: pichichihouse2Desktop, mobile: pichichihouse2Mobile, caption: '' },
+    { desktop: pichichihouse3Desktop, mobile: pichichihouse3Mobile, caption: '' },
+    { desktop: pichichihouse4Desktop, mobile: pichichihouse4Mobile, caption: '' },
+    { desktop: pichichihouse5Desktop, mobile: pichichihouse5Mobile, caption: '' },
+    { desktop: pichichihouse6Desktop, mobile: pichichihouse6Mobile, caption: '' },
+    { desktop: pichichihouse7Desktop, mobile: pichichihouse7Mobile, caption: '' },
+    { desktop: pichichihouse8Desktop, mobile: pichichihouse8Mobile, caption: '' },
+    { desktop: pichichihouse9Desktop, mobile: pichichihouse9Mobile, caption: '' },
+    { desktop: pichichihouse10Desktop, mobile: pichichihouse10Mobile, caption: '' },
+    { desktop: pichichihouse11Desktop, mobile: pichichihouse11Mobile, caption: '' },
+    { desktop: pichichihouse12Desktop, mobile: pichichihouse12Mobile, caption: '' },
+    { desktop: pichichihouse13Desktop, mobile: pichichihouse13Mobile, caption: '' },
+    { desktop: pichichihouse14Desktop, mobile: pichichihouse14Mobile, caption: '' },
+    { desktop: pichichihouse15Desktop, mobile: pichichihouse15Mobile, caption: '' },
+    { desktop: pichichihouse16Desktop, mobile: pichichihouse16Mobile, caption: '' },
+    { desktop: pichichihouse17Desktop, mobile: pichichihouse17Mobile, caption: '' },
+    { desktop: pichichihouse18Desktop, mobile: pichichihouse18Mobile, caption: '' },
+    { desktop: pichichihouse19Desktop, mobile: pichichihouse19Mobile, caption: '' },
+    { desktop: pichichihouse20Desktop, mobile: pichichihouse20Mobile, caption: t('imageaereoporto') },
+    { desktop: pichichihouse21Desktop, mobile: pichichihouse21Mobile, caption: t('imageduomo') },
+    { desktop: pichichihouse22Desktop, mobile: pichichihouse22Mobile, caption: t('imagestudirai') },
+    { desktop: pichichihouse23Desktop, mobile: pichichihouse23Mobile, caption: t('imagefabrique') },
+    { desktop: pichichihouse24Desktop, mobile: pichichihouse24Mobile, caption: t('imagetram') },
+    { desktop: pichichihouse25Desktop, mobile: pichichihouse25Mobile, caption: t('imagearena') },
+    { desktop: pichichihouse26Desktop, mobile: pichichihouse26Mobile, caption: t('imagestazione') },
+    { desktop: pichichihouse27Desktop, mobile: pichichihouse27Mobile, caption: '' },
+  ];
+
+  const CAROUSEL_IMAGES = images.map((img, index) => ({
+    srcDesktop: img.desktop,
+    srcMobile: img.mobile,
+    caption: img.caption,
+    alt: altTexts[index],
+  }));
+
   return (
     <section className='imagecarousel'>
       <Swiper
@@ -152,7 +158,7 @@ const ImageHouse = React.memo(() => {
         className="mySwiper"
       >
         {CAROUSEL_IMAGES.map((image, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className={`item_${index}`}>
             <picture>
               <source media="(max-width: 1024px)" srcSet={image.srcMobile} />
               <source media="(min-width: 1025px)" srcSet={image.srcDesktop} />
@@ -162,6 +168,10 @@ const ImageHouse = React.memo(() => {
                 loading="lazy" 
                 className="carousel-image" 
               />
+              {image.caption && (
+                <span className="caption">{image.caption}</span>
+              )}
+              
             </picture>
           </SwiperSlide>
         ))}

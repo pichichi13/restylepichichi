@@ -30,6 +30,9 @@
       "@components/*": ["./src/components/*"],
       "@css/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"],
+      "@context/*": ["./src/context/*"],
+      "@translations/*": ["./src/translations/*"],
+      "@hooks/*": ["./src/hooks/*"],
     }
 
   },

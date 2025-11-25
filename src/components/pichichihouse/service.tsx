@@ -5,8 +5,10 @@ import SectionList from './sectionlist';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import ariacondizionata from '../../assets/pichichihouse/servizi/ariacondizionata.png';
+import { useT } from '@hooks/useT';
 
+
+import ariacondizionata from '@assets/pichichihouse/servizi/ariacondizionata.png';
 import microonde from '@assets/pichichihouse/servizi/microonde.png';
 import forno from '@assets/pichichihouse/servizi/forno.png';
 import lavatrice from '@assets/pichichihouse/servizi/lavatrice.png';
@@ -34,40 +36,42 @@ import parcogiochi from '@assets/pichichihouse/servizi/parcogiochi.png';
 import chiesa from '@assets/pichichihouse/servizi/chiesa.png';
 
 
-const houseItems = [
-  { img: ariacondizionata, label: "Aria condizionata" },
-  { img: microonde, label: "Forno a microonde" },
-  { img: forno, label: "Forno" },
-  { img: lavatrice, label: "Lavatrice" },
-  { img: lavastoviglie, label: "Lavastoviglie" },
-  { img: tv, label: "Smart TV" },
-  { img: wifi, label: "WiFi" },
-  { img: macchinacaffe, label: "Macchina del caffè" },
-  { img: phone, label: "Phone" },
-  { img: ferrodastiro, label: "Ferro da stiro" },
-];
-
-const transportItems = [
-  { img: autobus, label: "Autobus (45 e 66)" },
-  { img: tram, label: "Tram (27)" },
-  { img: metropolitana, label: "Metropolitana (M4)" },
-  { img: aereoporto, label: "Aereoporto (Linate)" },
-];
-
-const nearbyItems = [
-  { img: market, label: "Market" },
-  { img: restaurant, label: "Ristoranti" },
-  { img: gelateria, label: "Gelateria" },
-  { img: pub, label: "Pub/Birreria" },
-  { img: barcaffe, label: "Bar/Caffè" },
-  { img: areacani, label: "Area cani" },
-  { img: lunapark, label: "Luna park" },
-  { img: parcogiochi, label: "Parco giochi" },
-  { img: chiesa, label: "Chiesa" },
-];
 
 const Service: React.FC = ({}) => {
 
+  const t = useT();
+
+  const houseItems = [
+    { img: ariacondizionata, label: t('services1') },
+    { img: microonde, label: t('services2') },
+    { img: forno, label: t('services3') },
+    { img: lavatrice, label: t('services4') },
+    { img: lavastoviglie, label: t('services5') },
+    { img: tv, label: t('services6') },
+    { img: wifi, label: t('services7') },
+    { img: macchinacaffe, label: t('services8') },
+    { img: phone, label: t('services9') },
+    { img: ferrodastiro, label: t('services10') },
+  ];
+
+  const transportItems = [
+    { img: autobus, label: t('move1') },
+    { img: tram, label: t('move2') },
+    { img: metropolitana, label: t('move3') },
+    { img: aereoporto, label: t('move4') },
+  ];
+
+  const nearbyItems = [
+    { img: market, label: t('near1') },
+    { img: restaurant, label: t('near2') },
+    { img: gelateria, label: t('near3') },
+    { img: pub, label: t('near4') },
+    { img: barcaffe, label: t('near5') },
+    { img: areacani, label: t('near6') },
+    { img: lunapark, label: t('near7') },
+    { img: parcogiochi, label: t('near8') },
+    { img: chiesa, label: t('near9') },
+  ];
 
   useEffect(() => {
     AOS.init({
@@ -86,10 +90,10 @@ const Service: React.FC = ({}) => {
   
   return (
     <>
-
-      <SectionList title="Cosa trovi in casa" items={houseItems} animation="flip-left" background="services" />
-      <SectionList title="Come muoverti" items={transportItems} animation="zoom-in" background="transport" />
-      <SectionList title="Nelle vicinanze" items={nearbyItems} animation="slide-up" background="near" />
+    
+      <SectionList title={t('services_title')} items={houseItems} animation="flip-left" background="services" />
+      <SectionList title={t('move_title')} items={transportItems} animation="zoom-in" background="transport" />
+      <SectionList title={t('near_title')} items={nearbyItems} animation="slide-up" background="near" />
         
     </>
   )

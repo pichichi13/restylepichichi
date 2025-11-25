@@ -19,7 +19,10 @@ export default defineConfig({
       '@assets': resolve(__dirname, './src/assets'),
       '@utils': resolve(__dirname, './src/utils'),
       '@components': resolve(__dirname, './src/components'),
-      '@css': resolve(__dirname, './src/styles')
+      '@css': resolve(__dirname, './src/styles'),
+      '@context': resolve(__dirname, './src/context'),
+      '@translations': resolve(__dirname, './src/translations'),
+      '@hooks': resolve(__dirname, './src/hooks')
     }
   },
   base: '/',

@@ -104,6 +104,39 @@ h1{
         }*/
       }
     }
+    .flagContent{
+      display:flex;
+      gap:1rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index:2;
+      @include respond-to(desktop) {
+        gap:1rem;
+        top: 1rem;
+        right: 4rem;
+      }
+      button{
+        border:none;
+        background: none;
+        
+        .flag{
+          width:1.5rem;
+          height:1.5rem;
+          @include respond-to(desktop) {
+            width:1.8rem;
+            height:1.8rem;
+          }
+        }
+        &:disabled{
+          background:none;
+          .flag{
+            width:3rem;
+            height:3rem;
+          } 
+        }
+      }
+    }
   }
   .imagecarousel,.swiper, .swiper-wrapper{
     width:100vw;
@@ -122,6 +155,51 @@ h1{
         object-fit: cover;
         object-position: center;
         display: block;
+        position:relative;
+
+        .caption{
+            display: block;
+            position: absolute;
+            width: 98%;
+            bottom: 0;
+            left: 50%;
+            min-height: 4rem;
+            transform: translateX(-50%);
+            background-color: white;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.5rem;
+            padding: 0.5rem 1rem 1.5rem 1rem;
+            color: black;
+            border-radius: 2rem 2rem 0 0;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+            box-shadow: 0 0 20px 4px rgba(255, 0, 255, 0.6), 0 0 40px 10px rgba(0, 200, 255, 0.4);
+          }
+
+
+        @include respond-to(desktop) {
+          .caption{
+            width: 90%;
+            min-height: 5rem;
+            font-size: 2rem;
+            padding: 1rem 3rem 1.5rem 3rem;
+            border-radius: 2rem 2rem 0 0;
+          }
+        }
+      }
+    }
+    .swiper-pagination{
+      .swiper-pagination-bullet{
+        margin:0 0.1rem;
+        padding:0;
+        height:2px;
+        @include respond-to(desktop) {
+          margin:0 0.2rem;
+          width:0.5rem;
+          height:0.5rem;
+        }
       }
     }
   }
